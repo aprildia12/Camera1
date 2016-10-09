@@ -41,16 +41,15 @@ public class ResultActivity extends Activity {
         String photoPath = intent.getStringExtra("strParamName");
 
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
+        options.inSampleSize = 1;
         final Bitmap bmp = BitmapFactory.decodeFile(photoPath, options);
 
         Matrix matrix = new Matrix();
         matrix.preRotate(90);
-        Bitmap adjustedBitmap = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(),
-                bmp.getHeight(), matrix, true);
+        //Bitmap adjustedBitmap = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), matrix, true);
 
         ImageView img = (ImageView) findViewById(R.id.imageView1);
-        img.setImageBitmap(adjustedBitmap);
+        img.setImageBitmap(bmp);
 
     }
 }  

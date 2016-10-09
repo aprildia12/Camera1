@@ -1,26 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity">
-
-    <SurfaceView
-        android:id="@+id/surfaceView"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="사진찍기" />
+        android:background="#ffffff">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical"
+            android:background="#6ec1f5"
+            android:id="@+id/header"
+            android:paddingTop="15dip"
+            android:paddingBottom="15dip">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="15pt"
+                android:textColor="#ffffff"
+                android:text="Camera"/>
+        </LinearLayout>
 
-</RelativeLayout>  
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_below="@id/header">
+            <Button
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10sp"
+                android:textColor="#ffffff"
+                android:textSize="8pt"
+                android:background="#6ec1f5"
+                android:id="@+id/btn1"
+                android:text="ON"
+                android:onClick="onBtnClick"/>
+            <Button
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/btn1"
+                android:layout_margin="10sp"
+                android:textColor="#ffffff"
+                android:textSize="8pt"
+                android:background="#6ec1f5"
+                android:id="@+id/btn2"
+                android:text="OFF"
+                android:onClick="onBtnClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="vertical"
+            android:id="@+id/footer"
+            android:background="#6ec1f5"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</ScrollView>
